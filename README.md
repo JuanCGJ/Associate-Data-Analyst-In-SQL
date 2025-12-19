@@ -1,2 +1,2 @@
 # Associate-Data-Analyst-In-SQL
-Here you will find all the path you need cover to become an Associate Data Analyst In SQL. In this repository there are different courses in order, from basic to advanced and in addition you fill find practical excercises to understand the theory.
+Here you will find all the path you need cover to become an Associate Data Analyst In SQL. In this repository there are different courses in order, from basic to advanced, and in addition you fill find practical excercises to understand the theory.
