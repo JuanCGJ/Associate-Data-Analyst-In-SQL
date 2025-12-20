@@ -27,6 +27,7 @@ INNER JOIN countries
 ON cities.country_code = countries.code;
 
 
+
 Joining with aliased tables
 Table aliases are helpful in allowing you to reference them in other parts of your query, like the SELECT statement.
 
@@ -50,6 +51,7 @@ INNER JOIN economies AS e
 ON c.code=e.code
 
 
+
 USING in action
 In the previous exercises, you performed your joins using the ON keyword. Recall that when both the field names being joined on are the same, you can take advantage of the USING clause.
 
@@ -64,3 +66,103 @@ FROM countries AS c
 INNER JOIN languages AS l
 -- Match using the code column
 USING(code)
+
+
+
+Relationships in our database
+Now that you know more about the different types of relationships that can exist between tables, 
+it's time to examine a few relationships in the countries database!
+To answer questions about table relationships, you can explore the tables displayed as tabs in your console.
+
+Question
+What best describes the relationship between code in the countries table and country_code in the cities table?
+R: This is a one-to-many relationship.
+
+Question
+Which of these options best describes the relationship between the countries table and the languages table?
+R: This is a many-to-many relationship.
+
+
+Inspecting a relationship
+You've just identified that the countries table has a many-to-many relationship with the languages table. That is, many languages can be spoken in a country, and a language can be spoken in many countries.
+But, what is the best way to query all the different languages spoken in a country? Or, all the countries that speak a certain language?
+
+Select the country name, aliased as country, from the countries table.
+-- Select country (aliased) from countries
+SELECT name AS country
+FROM countries
+
+Now add an alias c for the countries table and perform an inner join with the languages table, l, on the right; 
+join on code in line 8 with the USING keyword; include the language name, aliased as language.
+-- Select country and language names (aliased)
+SELECT c.name AS country, l.name AS language
+-- From countries (aliased)
+FROM countries AS c
+-- Join to languages (aliased)
+INNER JOIN languages AS l
+-- Use code as the joining field with the USING keyword;
+USING(code);
+
+Add a WHERE clause to find how many countries speak the language 'Bhojpuri'.
+-- Select country and language name (aliased)
+SELECT c.name AS country, l.name AS language
+-- From countries (aliased)
+FROM countries AS c
+-- Join to languages (aliased)
+INNER JOIN languages AS l
+-- Use code as the joining field with the USING keyword
+USING(code)
+-- Filter for the Bhojpuri language
+WHERE l.name = 'Bhojpuri';
+
+In how many countries is the 'Bhojpuri' language spoken? Select the correct answer from the following options.
+R:2
+
+
+
+Joining multiple tables
+You've seen that the ability to combine multiple joins using a single query is a powerful feature of SQL.
+
+Suppose you are interested in the relationship between fertility and unemployment rates. Your task in this exercise is to join tables to return the country name, year, fertility rate, and unemployment rate in a single result from the countries, populations and economies tables.
+Do an inner join of countries AS c (left) with populations AS p (right), on code.
+Select name and fertility_rate.
+-- Select relevant fields
+Select c.name, p.fertility_rate
+FROM countries as c
+-- Inner join countries and populations, aliased, on code
+INNER JOIN populations as p
+ON c.code = p.country_code
+
+Chain an inner join with the economies table AS e, on code.
+Select year and unemployment_rate from the economies table.
+-- Select fields
+SELECT name, e.year, fertility_rate, e.unemployment_rate
+FROM countries AS c
+INNER JOIN populations AS p
+ON c.code = p.country_code
+-- Join to economies (as e)
+INNER JOIN economies as e
+-- Match on country code
+ON c.code = e.code;
+
+
+Checking multi-table joins
+Have a look at the results for Albania from the previous query below. You can see that the 2015 fertility_rate has been paired with 2010 unemployment_rate, and vice versa.
+
+name	year	fertility_rate	unemployment_rate
+Albania	2015	1.663	17.1
+Albania	2010	1.663	14
+Albania	2015	1.793	17.1
+Albania	2010	1.793	14
+Instead of four records, the query should return two: one for each year. The last join was performed on c.code = e.code, without also joining on year. Your task in this exercise is to fix your query by explicitly stating that both the country code and year should match!
+
+Modify your query so that you are joining to economies on year as well as code.
+SELECT name, e.year, fertility_rate, unemployment_rate
+FROM countries AS c
+INNER JOIN populations AS p
+ON c.code = p.country_code
+INNER JOIN economies AS e
+ON c.code = e.code
+-- Add an additional joining condition such that you are also joining on year
+	AND p.year = e.year;
+
