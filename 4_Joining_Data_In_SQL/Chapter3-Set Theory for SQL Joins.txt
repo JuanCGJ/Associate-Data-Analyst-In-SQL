@@ -1,1 +1,81 @@
+UNION vs. UNION ALL
+Nice work learning all about UNION and UNION ALL!
+
+Two tables, languages and currencies, are provided. Run the queries provided in the console and select the correct answer for the multiple-choice questions in this exercise.
+Question
+What result will the following SQL query produce?
+
+SELECT * 
+FROM languages
+UNION
+SELECT * 
+FROM currencies;
+R:A SQL error, because languages and currencies do not have the same number of fields
+
+What result will the following SQL query produce?
+
+SELECT code FROM
+languages
+UNION ALL
+SELECT code FROM 
+currencies;
+R:An unordered list of each country code in languages and currencies, including duplicates
+
+What will the following SQL query produce?
+
+SELECT code 
+FROM languages
+UNION
+SELECT curr_id 
+FROM currencies;
+R:A SQL error, because code and curr_id are not of the same data type
+
+
+
+Comparing global economies
+Are you ready to perform your first set operation?
+In this exercise, you have two tables, economies2015 and economies2019, available to you under the tabs in the console. You'll perform a set operation to stack all records in these two tables on top of each other, excluding duplicates.
+When drafting queries containing set operations, it is often helpful to write the queries on either side of the operation first, and then call the set operator. The instructions are ordered accordingly.
+
+Begin your query by selecting all fields from economies2015.
+Create a second query that selects all fields from economies2019.
+Perform a set operation to combine the two queries you just created, ensuring you do not return duplicates.
+
+-- Select all fields from economies2015
+SELECT * 
+FROM economies2015
+-- Set operation
+UNION
+-- Select all fields from economies2019
+SELECT *
+FROM economies2019
+ORDER BY code, year;
+
+
+
+Comparing two set operations
+You learned in the video exercise that UNION ALL returns duplicates, whereas UNION does not. In this exercise, 
+you will dive deeper into this, looking at cases for when UNION is appropriate compared to UNION ALL.
+
+You will be looking at combinations of country code and year from the economies and populations tables.
+
+Perform an appropriate set operation that determines all pairs of country code and year (in that order) from economies and populations, excluding duplicates.
+Order by country code and year.
+-- Query that determines all pairs of code and year from economies and populations, without duplicates
+SELECT code AS country_code, year
+FROM economies
+UNION
+SELECT country_code, year
+FROM populations
+ORDER BY country_code, year;
+
+Amend the query to return all combinations (including duplicates) of country code and year in the economies or the populations tables.
+SELECT code, year
+FROM economies
+-- Set theory clause
+UNION ALL
+SELECT country_code, year
+FROM populations
+ORDER BY code, year;
+
 
