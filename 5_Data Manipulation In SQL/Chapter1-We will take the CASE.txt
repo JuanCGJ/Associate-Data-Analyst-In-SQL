@@ -59,3 +59,59 @@ ON m.hometeam_id = t.team_api_id
 -- Filter for Barcelona
 WHERE m.awayteam_id = 8634;
 
+
+
+In CASE of rivalry
+Barcelona and Real Madrid have been rival teams for more than 80 years. Matches between these two teams are given the name El Clásico (The Classic). In this exercise, you will query a list of matches played between these two rivals, where Barcelona is the home team, categorizing as a home or away win depending on multiple conditions.
+
+Construct the CASE statement identifying who won each match.
+Fill in the operators to identify Barcelona or Real Madrid as the winner.
+SELECT 
+	date,
+	CASE WHEN hometeam_id = 8634 THEN 'FC Barcelona' 
+         ELSE 'Real Madrid CF' END as home,
+	CASE WHEN awayteam_id = 8634 THEN 'FC Barcelona' 
+         ELSE 'Real Madrid CF' END as away,
+	-- Identify possible home match outcomes
+	CASE WHEN home_goal > away_goal AND hometeam_id = 8634
+			 THEN 'Barcelona win!'
+        WHEN home_goal < away_goal AND awayteam_id = 8633 
+			 THEN 'Real Madrid win!'
+        ELSE 'Tie!' END AS outcome
+FROM matches_spain
+WHERE hometeam_id = 8634 AND awayteam_id = 8633;
+
+
+
+Filtering your CASE statement
+Let's generate a list of matches won by Italy's Bologna team! There are quite a few additional teams in the two tables, so a key part of generating a usable query will be using your CASE statement as a filter in the WHERE clause.
+
+CASE statements allow you to categorize data that you're interested in -- and exclude data you're not interested in. In order to do this, you can use a CASE statement as a filter in the WHERE statement to remove output you don't want to see.
+
+Here is how you might set that up:
+
+SELECT *
+FROM table
+WHERE 
+    CASE WHEN a > 5 THEN 'Keep'
+         WHEN a <= 5 THEN 'Exclude' END = 'Keep';
+In essence, you can use the CASE statement as a filtering column like any other column in your database. The only difference is that you don't alias the statement in WHERE.
+
+Use the CASE statement in the WHERE clause to filter where hometeam_id is 9857 and home goals exceed away goals.
+Use the CASE statement in the WHERE clause to filter where awayteam_id is 9857 and away goals exceed home goals.
+End the CASE statement by excluding games that Bologna did not win.
+
+SELECT 
+	season,
+    date,
+	home_goal,
+	away_goal
+FROM matches_italy
+WHERE 
+	-- Find games where home_goal is more than away_goal
+	CASE WHEN hometeam_id = 9857 AND home_goal > away_goal THEN 'Bologna Win'
+		-- Find games where away_goal is more than home_goal
+        WHEN awayteam_id = 9857 AND away_goal > home_goal THEN 'Bologna Win' 
+        -- Exclude games not won by Bologna
+		END IS NOT NULL;
+
