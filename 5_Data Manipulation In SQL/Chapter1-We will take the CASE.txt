@@ -115,3 +115,73 @@ WHERE
         -- Exclude games not won by Bologna
 		END IS NOT NULL;
 
+
+
+COUNT using CASE WHEN
+Do the number of soccer matches played in a given European country differ across seasons? We will use the European Soccer Database to answer this question.
+
+You will examine the number of matches played in 3 seasons within each country listed in the database. This is much easier to explore with each season's matches in separate columns. Using the country and unfiltered match table, you will count the number of matches played in each country during the 2012/2013 and 2013/2014 seasons.
+
+Create a CASE WHEN statement counting the matches played in the '2012/2013' season.
+Create a CASE WHEN statement counting the matches played in the'2013/2014' season, aliasing as matches_2013_2014.
+SELECT 
+	c.name AS country,
+    -- Count matches in 2012/2013
+	COUNT(CASE WHEN m.season = '2012/2013' THEN m.id END) AS matches_2012_2013,
+    -- Count matches in 2013/2014
+	COUNT(CASE WHEN m.season = '2013/2014' THEN m.id END) AS matches_2013_2014
+FROM country AS c
+LEFT JOIN match AS m
+ON c.id = m.country_id
+GROUP BY country;
+
+
+
+Conditional selection and summation with CASE WHEN
+You can use CASE statements to apply a constraint and run a calculation by including the statement inside an aggregate function like SUM()!
+
+In this exercise, your goal is to filter for a specific team (Real Sociedad) and calculate their total home and away goals per season.
+Create a CASE statement to calculate the total number of home goals where the hometeam_id is 8560.
+Create a second CASE statement to calculate the total number of away goals where the awayteam_id is 8560, aliasing the column as away_goals.
+Group the query by season.
+
+SELECT season,
+	-- SUM the home goals
+    SUM(CASE WHEN hometeam_id = 8560 THEN home_goal END) AS home_goals,
+    -- SUM the away goals
+    SUM(CASE WHEN awayteam_id = 8560 THEN away_goal END) AS away_goals
+FROM match
+-- Group the results by season
+GROUP BY season;
+
+
+
+Using CASE and AVG to derive fractions
+CASE statements will return any value you specify in your THEN clause. This is an incredibly powerful tool for robust calculations and data manipulation when used in conjunction with an aggregate statement. One key task you can perform is using CASE inside an AVG function to calculate a fraction of information in your database.
+
+Here's an example of how you set that up:
+
+AVG(CASE WHEN condition_is_met THEN 1
+         WHEN condition_is_not_met THEN 0 END)
+With this approach, it's important to accurately specify which records count as 0, 
+otherwise your calculations may not be correct!
+
+Your task is to examine the number of wins, losses, and ties in each country. 
+The matches table is filtered to include all matches from the 2013/2014 and 2014/2015 seasons.
+
+Within an AVG() function, complete the CASE statement by checking if m.home_goal is not equal to m.away_goal, assigning a value of 0 if this condition is met.
+Repeat this process to compare home and away goals in '2014/2015', aliasing as ties_2014_2015.
+SELECT 
+	c.name AS country,
+    -- Calculate the fraction of tied games in each season
+	AVG(CASE WHEN m.season='2013/2014' AND m.home_goal = m.away_goal THEN 1
+			WHEN m.season='2013/2014' AND m.home_goal <> m.away_goal THEN 0
+			END) AS ties_2013_2014,
+	AVG(CASE WHEN m.season='2014/2015' AND m.home_goal = m.away_goal THEN 1
+			WHEN m.season='2014/2015' AND m.home_goal != m.away_goal THEN 0
+			END) AS ties_2014_2015
+FROM country AS c
+LEFT JOIN matches AS m
+ON c.id = m.country_id
+GROUP BY country;
+(Nota: '<>' = diferente = '!=' )
