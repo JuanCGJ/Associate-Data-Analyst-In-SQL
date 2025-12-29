@@ -221,3 +221,23 @@ LEFT JOIN match_list
 ON l.id = match_list.country_id
 GROUP BY l.name;
 
+----------------------------------------------------------------------------------------------------------------------
+IN SUMMARY
+Differentiating Techniques:
+
+Joins
+• Combine 2+ tables 
+ -Simple operations/aggregations
+
+Correlated Subqueries
+• Match subqueries & tables 。 Avoid limits of joins
+• High processing time
+
+Multiple/Nested Subqueries
+• Multi-step transformations 
+ -Improve accuracy and reproducibility
+
+Common Table Expressions (CTEs)
+• Organize subqueries sequentially
+• Can reference other CTES
+----------------------------------------------------------------------------------------------------------------------
