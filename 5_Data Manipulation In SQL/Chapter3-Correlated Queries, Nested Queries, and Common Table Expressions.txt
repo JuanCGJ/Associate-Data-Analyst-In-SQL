@@ -223,7 +223,7 @@ GROUP BY l.name;
 
 ----------------------------------------------------------------------------------------------------------------------
 IN SUMMARY
-Differentiating Techniques:
+											Differentiating Techniques:
 
 Joins
 • Combine 2+ tables 
@@ -240,4 +240,26 @@ Multiple/Nested Subqueries
 Common Table Expressions (CTEs)
 • Organize subqueries sequentially
 • Can reference other CTES
+
+So which do I use?
+• Depends on your database/question
+• The technique that best allows you to:
+  -Use and reuse your queries
+  -Generate clear and accurate results
+
+											Different use cases (Examples)
+Joins
+• 2+ tables 
+(What is the total sales per employee?)
+
+Correlated Subqueries
+• Who does each employee report to in a company?
+
+Multiple/Nested Subqueries
+• What is the average deal size closed by each sales representative in the
+quarter?
+
+Common Table Expressions
+• How did the marketing, sales, growth, & engineering teams perform on key metrics?
 ----------------------------------------------------------------------------------------------------------------------
+
