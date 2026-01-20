@@ -3,19 +3,21 @@ P (event) = # ways event can happen / total # of possible outcomes
 Example: a coin flip
 P (heads) 1/2 = 50%
 
-You learned about the concept of conditional probability, which is crucial for understanding how the outcome of one event can affect the probability of another event occurring. This is particularly important when dealing with dependent events, where the outcome of the first event influences the outcomes of subsequent events. Key points covered include:
+The concept of conditional probability, is crucial for understanding how the outcome 
+of one event can affect the probability of another event occurring. This is particularly important when dealing with dependent events, where the outcome of the first event influences the outcomes of subsequent events. 
+Key points covered include:
 
-Dependent vs. Independent Events: You explored the difference between dependent and independent events. Dependent events are those where the outcome of one event affects the outcome of another, such as drawing cards from a deck without replacement. Independent events, on the other hand, are not influenced by each other's outcomes.
+Dependent vs. Independent Events: You explored the difference between dependent and independent events. 
+Dependent events are those where the outcome of one event affects the outcome of another, such as drawing cards from a deck without replacement. 
+Independent events, on the other hand, are not influenced by each other's outcomes.
 
 Sampling Without Replacement: Through the sales meeting scenario, you saw how removing a name (Brian's) from a pool changed the probability of selecting another name (Claire's), demonstrating sampling without replacement and its impact on probability.
 
-Calculating Conditional Probability: You learned the formula for calculating conditional probability: the probability of event A given event B is the sum of the probabilities of both events divided by the probability of event B. This was applied to real-world examples, including calculating the chance of an order being worth more than $150 given it is for kitchen products.
+Calculating Conditional Probability: You learned the formula for calculating conditional probability: the probability of event A given event B is the sum of the probabilities of both events divided by the probability of event B. 
+This was applied to real-world examples, including calculating the chance of an order being worth more than $150 given it is for kitchen products.
 # Example of calculating conditional probability
 probability_A_given_B = (probability_A_and_B) / (probability_B)
 
 Practical Application with Sales Data: You applied these concepts to sales data, calculating the probability of an order being for kitchen products given it was worth more than $150, and vice versa, demonstrating how conditional probability provides insights into real-world data.
 
 This lesson equipped you with the foundational knowledge to tackle more complex probability problems and understand how events can be interconnected.
-
-
-
