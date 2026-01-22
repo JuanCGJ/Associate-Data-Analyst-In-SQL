@@ -1,1 +1,27 @@
-nn
+Binomial distribution
+
+Probability distribution of the number of successes in a sequence of independent events
+For example, the number of heads in a sequence of coin flips
+
+Described by n and p
+n: total number of events
+p: probability of success
+
+Expected value
+Expected value = n × p
+Expected number of heads out of 10 flips = 10 × 0.5 = 5
+If we don't know p, but know n and the expected value:
+p = expected value / n
+
+Independence
+The binomial distribution is a probability distribution of the number of successes in a
+sequence of independent events
+Note: If events are not independent, the binomialdistribution does not apply!
+
+General applications
+The binomial distribution can be used for independent events producing binary outcomes
+Clinical trial measuring drug effectiveness: Effective or not
+Betting on the result of a sports match: Bettor can win or lose
+
+
+
