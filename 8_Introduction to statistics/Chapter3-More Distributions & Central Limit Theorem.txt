@@ -25,3 +25,22 @@ Betting on the result of a sports match: Bettor can win or lose
 
 
 
+📊 Distribución normal (campana de Gauss)
+- Forma: simétrica, en forma de campana.
+- Media (μ): punto central de la curva; también es la mediana y la moda.
+- Desviación estándar (σ): indica qué tan dispersos están los datos respecto a la media.
+- Regla empírica:
+- μ ± 1σ → contiene aproximadamente el 68% de los datos.
+- μ ± 2σ → contiene aproximadamente el 95% de los datos.
+- μ ± 3σ → contiene aproximadamente el 99.7% de los datos.
+Cada línea vertical representa:
+- μ → centro de la distribución.
+- μ ± 1σ → límites donde se concentra la mayoría de los datos.
+- μ ± 2σ → límites donde se encuentran casi todos los datos.
+- μ ± 3σ → extremos de la distribución, donde hay muy pocos datos.
+
+📐 Kurtosis (forma del pico de la curva)
+- Kurtosis normal (mesocúrtica): forma estándar de campana.
+- Kurtosis positiva (leptocúrtica): pico más alto y colas más largas → más valores extremos.
+- Kurtosis negativa (platicúrtica): curva más plana → menos valores extremos.
+
