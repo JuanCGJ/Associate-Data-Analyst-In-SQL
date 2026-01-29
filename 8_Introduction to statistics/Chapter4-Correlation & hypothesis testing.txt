@@ -40,13 +40,70 @@ Independent and dependent variables: Commonly used to describe hypothesis test r
 
 In a graphic would be: 
 
-x
+x-axis
 Independent variable:
   -Unaffected by other data -> Vitamin C supplementation
 
-y
+y-axis
 Dependent variable:
   -Affected by other data -> birth gender ratio
 
 
+
+
+Experiments, treatment, and control
+
+Experiments are a subset of hypothesis testing
+  -Experiments are not just conducted in academia
+
+Experiments aim to answer: What is the effect of the treatment on the response?
+-Treatment: independent variable
+-Response: dependent variable
+
+Example
+
+Advertising as a treatment
+What is the effect of an advertisement on the number of products purchased?
+-Treatment: advertisement
+-Response: number of products purchased
+
+
+Controlled experiments
+1. Participants are assigned to either the treatment group or the control group
+  -Treatment group sees the advertisement
+  -Control group does not see the advertisement
+
+2. Groups should be comparable to avoid introducing bias
+3. If groups are not comparable, this could lead to drawing incorrect conclusions
+
+
+The gold standard of experiments
+1.Randomization
+  -Participants are assigned to treatment/control randomly, not based on any other characteristics
+  -Choosing randomly helps ensure that groups are comparable Known as a randomized controlled trial
+
+2.Blinding
+  -Participants will not know which group they're in
+  -Participants receive a placebo, which resembles the treatment but has no effect
+  -In clinical trials it is common to use a sugar pill
+
+3.Double-blind randomized controlled trial
+  -Person administering the treatment/running the study doesn't know whether the treatment is real or a placebo
+  -Prevents bias in the response and/or analysis of results
+
+Fewer opportunities for bias = more reliable conclusion about causation
+
+
+
+Randomized Controlled Trials vs. A/B testing
+
+Randomized controlled trial
+  -Can be multiple treatment groups
+  -Popular in science, clinical research
+
+        RCT also known as
+
+A/B testing
+  -Popular in marketing, engineering
+  -Only split evenly into two groups: treatment and control.
 
