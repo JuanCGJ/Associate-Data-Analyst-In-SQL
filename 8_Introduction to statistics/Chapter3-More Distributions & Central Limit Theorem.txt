@@ -39,8 +39,18 @@ Cada línea vertical representa:
 - μ ± 2σ → límites donde se encuentran casi todos los datos.
 - μ ± 3σ → extremos de la distribución, donde hay muy pocos datos.
 
+The normal distribution, often visualized as a bell curve, is characterized by its symmetry and the property that the total area under the curve equals one. Key points include:
+
+The distribution is defined by its mean and standard deviation, influencing its center and spread.
+The 68-95-99.7 rule, which states that 68% of the data falls within one standard deviation of the mean, 95% within two, and 99.7% within three.
+Real-world data, like exam scores, often closely follows a normal distribution, making it crucial for hypothesis testing.
+
 📐 Kurtosis (forma del pico de la curva)
 - Kurtosis normal (mesocúrtica): forma estándar de campana.
 - Kurtosis positiva (leptocúrtica): pico más alto y colas más largas → más valores extremos.
 - Kurtosis negativa (platicúrtica): curva más plana → menos valores extremos.
 
+You also explored skewness and kurtosis as methods to describe the shape of distributions:
+
+Skewness indicates the direction of the tail (positive/right or negative/left).
+Kurtosis describes the peak's sharpness and the tail's fatness, with distributions categorized as leptokurtic (positive kurtosis), mesokurtic (normal distribution), or platykurtic (negative kurtosis).
