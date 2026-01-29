@@ -107,3 +107,51 @@ A/B testing
   -Popular in marketing, engineering
   -Only split evenly into two groups: treatment and control.
 
+
+
+
+Correlation
+Relationships between two variables: Can be describe with scatter plot
+
+Pearson correlation coefficient
+  -Published by Karl Pearson in 1896!
+  -Quantifies the strength of a relationship between two variables
+  -Number between minus one and one
+  -Magnitude corresponds to strength of relationship
+  -Sign (+ or -) corresponds to direction of relationship
+  -Can only be used for Linear relationships
+
+Linear relationships
+  -Linear = proportionate changes between dependent and independent variables
+
+Values = strength of the relationship
+- 0.99 (very strong relationship)
+- 0.75 (strong relationship)
+- 0.56 (moderate relationship)
+- 0.21 (weak relationship)
+- 0.04 (no relationship) : Knowing the value of x doesn't tell us anything about y
+
+Sign = direction
+ (0.75): as x increases, y increases 
+(-0.75): as x increases, y decreases
+
+
+Life expectancy vs. cost of a bottle of water
+(see graphic in resources)
+Will increasing the cost of water result in anincrease in life expectancy?
+R/: It is important to distinguish that just because a relationship exists, it doesnt mean that changes in water
+will result in a change in life expectancy
+
+Correlation does not equal causation!!
+
+Confounding variables
+
+What else might be affecting life expectancy?
+  -A bottle of water costs more in countries with strong economies
+  -These countries generally offer access to high-quality healthcare
+
+The strength of the economy could be a confounding variable
+  -A confounding variable is not measured,
+  but may affect the relationship between
+  our variables
+
