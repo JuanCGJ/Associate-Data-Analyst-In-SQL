@@ -155,3 +155,50 @@ The strength of the economy could be a confounding variable
   but may affect the relationship between
   our variables
 
+
+
+
+Interpreting hypothesis test results
+
+Life expectancy in Chicago vs. Bangkok
+Null hypothesis:
+  -There is no difference in life expectancy
+   between Chicago residents and Bangkok residents
+
+Alternative hypothesis:
+  -Chicago residents have a longer life
+  expectancy than Bangkok residents
+
+p-value
+p: Probability of achieving this result, assuming the null hypothesis is true
+
+
+Significance level (α)= alpha
+
+To reduce the risk of drawing a false conclusion:
+  -Set a probability threshold for rejecting the null hypothesis
+
+Known as α or significance level
+
+Decided before data collection to minimize bias:
+  -Otherwise they could choose a different α to serve their interests
+
+A typical threshold is 0.05
+  - 5% chance of wrongly concluding that Chicago residents live longer than Bangko residents
+
+If p ≤ α, reject the null hypothesis
+
+These results are said to be statistically significant
+
+
+In hypothesis testing there are four potential conslusions we can make based on the null hyppthesis.
+TYPE 1/2 ERROR
+
+- Reject null hypothesis + NULL hypothesis is True   =  Type 1 error
+- Accept null hypothesis + NULL hypothesis is False  =  Type 2 error
+- Accept null hypothesis + NULL hypothesis is True   =  Correct conlclusion
+- Reject null hypothesis + NULL hypothesis is False  =  Correct conlclusion
+
+
+
+- 
