@@ -44,7 +44,8 @@ minimum number of burglaries from the maximum.
 
 Variance: This measures the average squared distance of each data point from the mean. 
 To avoid the issue of negative and positive distances canceling each other out, distances are squared. 
-For example, to find the variance in the total number of crimes across London Boroughs, you subtract the mean number of crimes from each borough's crime count, square these distances, and then average them.
+For example, to find the variance in the total number of crimes across London Boroughs, 
+you subtract the mean number of crimes from each borough's crime count, square these distances, and then average them.
 
 Standard Deviation: The square root of the variance, bringing the units back to the original data's units, 
 which helps understand how dispersed the data is around the mean.
