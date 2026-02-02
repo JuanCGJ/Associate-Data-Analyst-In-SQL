@@ -35,15 +35,22 @@ Si quieres, puedo darte también una tabla comparativa o ejercicios para practic
 
 
 Measures of spread:
-Describe how far apart data points are in a dataset. This concept is crucial for understanding the variability within your data. Key points covered include:
+Describe how far apart data points are in a dataset. This concept is crucial for understanding the variability
+within your data. Key points covered include:
 
-Range: The difference between the maximum and minimum values in a dataset. For instance, the range of burglaries in London Boroughs is calculated by subtracting the minimum number of burglaries from the maximum.
+Range: The difference between the maximum and minimum values in a dataset. 
+For instance, the range of burglaries in London Boroughs is calculated by subtracting the 
+minimum number of burglaries from the maximum.
 
 Variance: This measures the average squared distance of each data point from the mean. To avoid the issue of negative and positive distances canceling each other out, distances are squared. For example, to find the variance in the total number of crimes across London Boroughs, you subtract the mean number of crimes from each borough's crime count, square these distances, and then average them.
 
-Standard Deviation: The square root of the variance, bringing the units back to the original data's units, which helps understand how dispersed the data is around the mean.
+Standard Deviation: The square root of the variance, bringing the units back to the original data's units, 
+which helps understand how dispersed the data is around the mean.
 
-Quartiles and Interquartile Range (IQR): Quartiles divide the data into four equal parts, and the IQR is the range between the first and third quartiles, highlighting the spread of the middle 50% of the data. This measure is less affected by extreme values.
+Quartiles and Interquartile Range (IQR): Quartiles divide the data into four equal parts, 
+and the IQR is the range between the first and third quartiles, 
+highlighting the spread of the middle 50% of the data. 
+This measure is less affected by extreme values.
 
 
 
