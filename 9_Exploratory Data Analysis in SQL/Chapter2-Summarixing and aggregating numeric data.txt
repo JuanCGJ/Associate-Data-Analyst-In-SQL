@@ -350,9 +350,17 @@ SELECT tag, min(date) AS mindate
   FROM stackoverflow
  GROUP BY tag;
  
+-- To clear table if it already exists
+DROP TABLE IF EXISTS startdates;
+
+CREATE TEMP TABLE startdates AS
+SELECT tag, min(date) AS mindate
+  FROM stackoverflow
+ GROUP BY tag;
+ 
 -- Select tag (Remember the table name!) and mindate
-SELECT so_min.tag, 
-       so_min.date, 
+SELECT startdates.tag, 
+       mindate, 
        -- Select question count on the min and max days
 	     so_min.question_count AS min_date_question_count,
        so_max.question_count AS max_date_question_count,
