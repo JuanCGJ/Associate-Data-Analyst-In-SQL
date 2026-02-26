@@ -1,1 +1,95 @@
-nn
+First account for each country.
+Conduct an analysis to see when the first customer accounts were created for each country.
+
+Create a table with a row for each country and columns for the country
+name and the date when the first customer account was created.
+
+Use the alias first_account for the column with the dates.
+Order by date in ascending order.
+
+1. -- For each country report the earliest date when an account was created
+SELECT country, 
+	   MIN(date_account_start) AS first_account
+FROM customers
+GROUP BY country
+ORDER BY first_account;
+
+
+
+
+Average movie ratings
+For each movie the average rating, the number of ratings and the number of 
+views has to be reported. Generate a table with meaningful column names.
+
+1. Group the data in the table renting by movie_id and report the ID and the average rating.
+SELECT movie_id, 
+       AVG(rating)    -- Calculate average rating per movie
+FROM renting
+GROUP BY movie_id;
+
+movie_id	avg
+54	      8.1666666666666667
+29	      8.0000000000000000
+
+2. 
+Add two columns for the number of ratings and the number of movie rentals to the results table.
+Use alias names avg_rating, number_rating and number_renting for the corresponding columns.
+
+SELECT movie_id, 
+       AVG(rating) AS avg_rating, -- Use as alias avg_rating
+       COUNT(rating) AS number_rating, 
+       -- Add column for number of  ratings with alias number_rating
+       COUNT(*) AS number_renting      
+       -- Add column for number of movie rentals with alias number_renting
+FROM renting
+GROUP BY movie_id;
+
+movie_id	avg_rating	        number_rating	  number_renting
+54	      8.1666666666666667	6	              9
+29	      8.0000000000000000	7	              11
+
+3. Order the rows of the table by the average rating such that it is in decreasing order.
+Observe what happens to NULL values.
+
+SELECT movie_id, 
+       AVG(rating) AS avg_rating,
+       COUNT(rating) AS number_ratings,
+       COUNT(*) AS number_renting
+FROM renting
+GROUP BY movie_id
+ORDER BY avg_rating; -- Order by average rating in decreasing order
+
+movie_id	avg_rating	        number_ratings	number_renting
+56	      5.6666666666666667	3	              4
+59	      6.0000000000000000	2	              5
+
+4. Which statement is true for the movie with average rating null?
+R: The average is null because all of the ratings of the movie are null.
+
+
+
+Average rating per customer
+Similar to what you just did, you will now look at the average movie ratings, 
+this time for customers. So you will obtain a table with the average rating given by each customer. 
+Further, you will include the number of ratings and the number of movie rentals per customer. 
+You will report these summary statistics only for customers with more than 7 movie rentals and 
+order them in ascending order by the average rating.
+
+1. Group the data in the table renting by customer_id and report the customer_id,
+the average rating, the number of ratings and the number of movie rentals.
+Select only customers with more than 7 movie rentals.
+Order the resulting table by the average rating in ascending order.
+
+SELECT customer_id, -- Report the customer_id
+      AVG(rating),  -- Report the average rating per customer
+      COUNT(rating),  -- Report the number of ratings per customer
+      COUNT(*)  -- Report the number of movie rentals per customer
+FROM renting
+GROUP BY customer_id
+HAVING COUNT(*) > 7 -- Select only customers with more than 7 movie rentals
+ORDER BY AVG(rating); -- Order by the average rating in ascending order
+
+customer_id	avg	                count	count
+104	        6.2500000000000000	4	    8
+28	        6.7142857142857143	7	    11
+
