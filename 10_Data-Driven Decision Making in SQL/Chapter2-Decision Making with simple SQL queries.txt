@@ -372,9 +372,38 @@ ON c.customer_id = r.customer_id
 LEFT JOIN movies AS m
 ON m.movie_id = r.movie_id
 WHERE date_renting >= '2019-01-01'
+
+
+
+
+You learned how to construct complex SQL queries to analyze customer preferences, focusing on identifying favorite actors and movies among specific customer groups. Key points included:
+
+Combining SQL Statements: You combined LEFT JOIN, WHERE, GROUP BY, HAVING, and ORDER BY to create a comprehensive query. This allowed you to augment tables with necessary information from multiple sources, such as linking the 'renting' table with 'actors' through an intermediary 'actsin' table.
+
+Filtering and Aggregation: You filtered customers by gender using WHERE and then grouped results by actor names with GROUP BY. This setup helped in counting how often movies featuring certain actors were watched by a targeted demographic.
+
+Calculating Averages and Excluding Nulls: By including an average rating in your query, you learned to refine your analysis to consider both the popularity and quality of movies. The HAVING clause was used to exclude actors with movies that had no ratings, demonstrating the difference between WHERE (pre-aggregation filtering) and HAVING (post-aggregation filtering).
+
+Ordering Results: The final query was ordered to show actors with the highest average ratings first, and within those, the ones with the most views, revealing insights into customer preferences.
+
+Application to Different Queries: You applied similar techniques to identify favorite movies for customers born in the 70s and explore actor popularity in Spain, adjusting your approach based on the question at hand.
+
+KPIs per Country: You prepared a report with key performance indicators (KPIs) for each country, focusing on the total number of movie rentals, average movie ratings, and total revenue since 2019.
 GROUP BY c.country;
 
 country				number_renting	average_rating		revenue
 null				1				10.0000000000000000	1.79
 Spain				26				8.0769230769230769	57.94
 Great Britan		9				7.2000000000000000	17.91
+
+
+For example, to identify favorite actors for male customers, your query might have looked like this:
+
+SELECT a.name, COUNT(*) AS views, AVG(r.rating) AS average_rating
+FROM renting r
+LEFT JOIN actsin ai ON r.movie_id = ai.movie_id
+LEFT JOIN actors a ON ai.actor_id = a.actor_id
+WHERE r.customer_gender = 'male'
+GROUP BY a.name
+HAVING average_rating IS NOT NULL
+ORDER BY average_rating DESC, views DESC;
