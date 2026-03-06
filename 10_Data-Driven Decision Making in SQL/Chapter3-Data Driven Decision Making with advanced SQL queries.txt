@@ -1,1 +1,80 @@
-nn
+Often rented movies
+Your manager wants you to make a list of movies excluding those which are hardly ever watched. 
+This list of movies will be used for advertising. List all movies with more than 5 views using
+a nested query which is a powerful tool to implement selection conditions.
+1. Select all movie IDs which have more than 5 views.
+ -- Select movie IDs with more than 5 views
+SELECT movie_id
+FROM renting
+GROUP BY movie_id
+HAVING COUNT(*) > 5;
+
+2. SELECT *
+FROM movies
+WHERE movie_id IN  -- Select movie IDs from the inner query
+	(SELECT movie_id
+	FROM renting
+	GROUP BY movie_id
+	HAVING COUNT(*) > 5)
+
+
+Frequent customers
+Report a list of customers who frequently rent movies on MovieNow.
+1. List all customer information for customers who rented more than 10 movies.
+SELECT *
+FROM customers
+WHERE customer_id IN   -- Select all customers with more than 10 movie rentals
+	(SELECT customer_id
+	FROM renting
+	GROUP BY customer_id
+	HAVING COUNT(*) > 10 );
+
+customer_id	name	            country	gender	date_of_birth	date_account_start
+21	        Avelaine Corbeil	France	female	1986-03-17	  2017-06-11
+28	        Sidney Généreux	  France	male	  1980-12-01	  2017-02-04
+
+
+
+Movies with rating above average
+For the advertising campaign your manager also needs a list of popular 
+movies with high ratings. Report a list of movies with rating above average.
+1. Calculate the average over all ratings.
+-- Calculate the total average rating
+SELECT AVG(rating)
+FROM renting
+
+avg
+7.9390243902439024
+
+2. Select movie IDs and calculate the average rating of movies with rating above average.
+SELECT movie_id, -- Select movie IDs and calculate the average rating 
+       AVG(rating)
+FROM renting
+GROUP BY movie_id
+HAVING AVG(rating) >           -- Of movies with rating above average
+	(SELECT AVG(rating)
+	FROM renting);
+
+movie_id	avg
+54	      8.1666666666666667
+29	      8.0000000000000000
+
+3. The advertising team only wants a list of movie titles. 
+Report the movie titles of all movies with average rating higher than the total average.
+
+SELECT title -- Report the movie titles of all movies with average rating higher than the total average
+FROM movies
+WHERE movie_id IN
+	(SELECT movie_id
+	 FROM renting
+     GROUP BY movie_id
+     HAVING AVG(rating) > 
+		(SELECT AVG(rating)
+		 FROM renting));
+
+title
+What Women Want
+The Fellowship of the Ring
+Harry Potter and the Philosopher's Stone
+
+
