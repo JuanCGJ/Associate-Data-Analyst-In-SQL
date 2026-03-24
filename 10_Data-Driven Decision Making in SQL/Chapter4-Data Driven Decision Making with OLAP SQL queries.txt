@@ -1,1 +1,81 @@
-mm
+OLAP: On-line Analytical Processing
+
+Groups of customers
+Use the CUBE operator to extract the content of a pivot table from the database.
+Create a table with the total number of male and female customers from each country.
+
+1. Create a table with the total number of customers, of all female and male customers,
+of the number of customers for each country and the number of men and women from each country.
+-- Extract information of a pivot table of gender and country for the number of customers
+SELECT gender, 
+	   country,
+	   count(*)
+FROM customers
+GROUP BY CUBE (gender, country)
+ORDER BY country;
+
+
+
+Categories of movies
+Give an overview on the movies available on MovieNow. 
+List the number of movies for different genres and release years.
+1. List the number of movies for different genres and the year of release 
+on all aggregation levels by using the CUBE operator.
+SELECT genre,
+       year_of_release,
+       count(*)
+FROM movies
+GROUP BY CUBE(genre, year_of_release)
+ORDER BY year_of_release;
+
+2. Which statement is NOT correct about the result table?
+r: The year of release with most movies is 2014.
+
+
+
+Analyzing average ratings
+Prepare a table for a report about the national preferences of the customers from MovieNow 
+comparing the average rating of movies across countries and genres.
+
+1. Augment the records of movie rentals with information about movies and customers,
+in this order. Use the first letter of the table names as alias.
+-- Augment the records of movie rentals with information about movies and customers
+SELECT *
+FROM renting AS r
+LEFT JOIN customers as c
+ON r.customer_id = c.customer_id
+LEFT JOIN movies AS m
+ON r.movie_id = m.movie_id;
+
+2. Calculate the average rating for each country.
+-- Calculate the average rating for each country
+SELECT 
+	country,
+    AVG(rating)
+FROM renting AS r
+LEFT JOIN movies AS m
+ON m.movie_id = r.movie_id
+LEFT JOIN customers AS c
+ON r.customer_id = c.customer_id
+GROUP BY country;
+
+3. Calculate the average rating for all aggregation levels of country and genre.
+SELECT 
+	country, 
+	genre, 
+	AVG(r.rating) AS avg_rating -- Calculate the average rating 
+FROM renting AS r
+LEFT JOIN movies AS m
+ON m.movie_id = r.movie_id
+LEFT JOIN customers AS c
+ON r.customer_id = c.customer_id
+GROUP BY CUBE(country, genre); 
+-- For all aggregation levels of country and genre
+
+4. What is the average rating over all records, rounded to two digits?
+r: 7.94
+
+
+
+
+
