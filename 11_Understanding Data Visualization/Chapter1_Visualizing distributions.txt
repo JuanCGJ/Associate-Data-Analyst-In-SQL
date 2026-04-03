@@ -4,7 +4,7 @@ In order to choose an appropriate type of plot to draw, you need to be able to d
 Continuos: Mass of squirrels, population of towns in Canada, Salary of employees.
 Categorical: Provinces of towns in Canada, Job titles employees, whas the exam pass or failed ?
 
-
+                                        Visualizing 1 variable
                                               Histograms
 When should you use a histogram?
 1. If you have a single continuous variable.
