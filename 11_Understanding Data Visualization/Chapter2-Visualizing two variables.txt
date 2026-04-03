@@ -1,1 +1,20 @@
-nn
+                      Visualizing 2 Variables
+
+                            Scatter plot
+When should you use a scatter plot?
+1. You have two continuous variables.
+2. You want to answer questions about the relationship between the two variables.
+
+Correlation
+How close are you to being able to fit a straight line through the points?
+Pisitive, negative, no, weak positive, weak negative.
+
+
+                              Line plot
+When should you use a line plot?
+1. You have two continuous variables.
+2. You want to answer questions about their relationship.
+3. Consecutive observations are connected somehow.
+Usually, but not always, the x-axis is dates or times.
+
+                              Bar plot
