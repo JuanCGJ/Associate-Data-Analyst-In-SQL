@@ -18,3 +18,17 @@ When should you use a line plot?
 Usually, but not always, the x-axis is dates or times.
 
                               Bar plot
+When should you use a bar plot?
+Most common cases:
+1. You have a categorical variable.
+2. You want counts or percentages for each category.
+Occasionally:
+1. You want another numeric score for each category, and need to include zero in the plot.
+
+                              Dot Plots
+UNDERSTANDING DATA VISUALIZATION
+When should you use a dot plot?
+1. You have a categorical variable.
+2. You want to display numeric scores for each category on a log scale, or
+3. You want to display multiple numeric scores for each category.
+
