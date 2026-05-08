@@ -1,1 +1,47 @@
-nn
+What is data storytelling?
+
+Data storytelling is the practice of building a narrative around a set of data and its
+accompanying visualizations to help convey the meaning of that data in a powerful and compelling fashion
+
+Anecdotes = imagination
+Stories = memorable
+Add value (provide context)
+Capture audience's attention
+Facilitate decision-making
+Drive change
+
+Data storytelling
+3-minutes story:
+What would you say in 3 minutes?
+Big idea:
+Unique point of view
+One sentence
+==> Clear and concise
+
+
+                                  DATA STORY= Data + Narrative + Visuals
+DATA
+    Results (e.g predictions) and findings (e.g.
+    data analysis)
+    Relevant
+    Accurate and reliable
+    Actionable insights
+
+NARRATIVE
+    Compelling and easy to understand
+    Prioritize essential points
+    Drive change
+    
+      Main point:
+        Avoid disconnectedfacts
+        Centralinsight
+      Explanatory context:
+        Understand background and audience
+        Clarify facts to that audience
+      Linear sequence
+
+VISUALS
+      Graphs should be:
+      simple
+      engaging
+      not misleading
