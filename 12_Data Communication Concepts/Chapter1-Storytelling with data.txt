@@ -45,3 +45,115 @@ VISUALS
       simple
       engaging
       not misleading
+
+
+
+                                                    DATA COMMUNICATION CONCEPTS
+
+Tech or non-tech approach?
+Technical knowledge is a continuum
+Data professionals care about their methods...
+...but the audience likely cares more about results and implications
+
+How technical?
+Low accuracy predictions to supply chain agents
+Don't care about stats
+Care about their own pain points
+
+
+
+Translating technical results into stories
+
+      Easy to understand
+      Engage audience
+      Decision-making
+      Drive change
+      Strategies
+
+
+
+Awareness
+
+      What do they know?
+      How our model works
+      
+      What do they need to understand?
+      Why we chose our predictive variables
+      
+      What level of information do they need?
+      The correlation coefficients between variables
+      
+      Adjust content
+      Prediction's impact and limitations
+      
+      Be conversational
+      The context on which our model works
+      
+      Serve audience
+      The interactions between customer traits
+
+
+
+ADEPT technique
+
+      Analogy
+      Diagram
+      Example
+      Plain English
+      Technical definition
+
+
+
+
+                                          Compelling narrative
+Meaningful to target audience
+Prioritize key points
+Drive change
+
+A description of connected events that organizes information to engage the audience and
+make them care for the results or information shared
+
+
+
+Narrative structure
+
+1-Background
+      What motivated the analysis?
+      What changed?
+      Who is the focus of the analysis?
+      Customers? Employees? Something else?
+
+      Our background: Total profit decreased
+      Dykes, Brent. Effective Data Storytelling. 1 Wiley.
+
+2-Insight
+      What contributed to the problem?
+      Only relevant information
+      Our insight:
+      Chips 20% increase. Sweets 30% decrease.
+
+3-Insight 2
+      Add supporting evidence
+      Help better explain the cause of problem
+      More insights:
+      Most popular chocolate 50% decreased.
+
+4-Climax
+      Central insight
+      What would happen if there is no change
+      Our climax:Loss $10M next year.
+
+5-Next Steps
+      Potential solutions
+      Course of action
+      Proactive
+      Our next steps: Rebrand chocolate.
+
+Building narrative
+Change over time: Chocolate lower in summer and higher in winter.
+Correlation: Chocolate rating vs. price
+Comparison: Two age groups vs. chocolate consumption
+Clustering: Groups with different coffee and chocolate consumption
+
+
+
