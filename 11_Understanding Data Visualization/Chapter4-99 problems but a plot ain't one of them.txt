@@ -1,5 +1,0 @@
-When should you use polar coordinates?
-Almost never.
-If you have a variable that is naturally circular (time of day, compass direction).
-
-
