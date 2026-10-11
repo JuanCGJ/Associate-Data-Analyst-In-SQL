@@ -26,6 +26,7 @@ Each course folder contains its own **showcase notebook** — a portfolio-style 
 
 | # | Folder | Course | Showcase Notebook |
 |---|--------|--------|--------------------|
+| 1 | [`1_Introduction to SQL`](./1_Introduction%20to%20SQL) | Introduction to SQL | [`Introduction_to_SQL_Showcase.ipynb`](./1_Introduction%20to%20SQL/Introduction_to_SQL_Showcase.ipynb) |
 | 2 | [`2_Intermidiate-SQL`](./2_Intermidiate-SQL) | Intermediate SQL | [`Intermediate_SQL_Showcase.ipynb`](./2_Intermidiate-SQL/Intermediate_SQL_Showcase.ipynb) |
 | 3 | [`3_Project-1:Students_Mental_health`](./3_Project-1:Students_Mental_health) | 🧩 Guided Project — Students' Mental Health | [`notebook.ipynb`](./3_Project-1:Students_Mental_health/notebook.ipynb) |
 | 4 | [`4_Joining_Data_In_SQL`](./4_Joining_Data_In_SQL) | Joining Data in SQL | [`Joining_Data_In_SQL.ipynb`](./4_Joining_Data_In_SQL/Joining_Data_In_SQL.ipynb) |
@@ -42,6 +43,13 @@ Each course folder contains its own **showcase notebook** — a portfolio-style 
 ---
 
 ## 📚 Course & Project Details
+
+### 📌 Course 1 — Introduction to SQL
+> Folder: [`1_Introduction to SQL`](./1_Introduction%20to%20SQL)
+
+The foundations: what relational databases and tables are (rows, fields, naming conventions, data types), and how to query them — `SELECT`/`FROM`, aliasing, `DISTINCT`, views, and the differences between SQL flavors like PostgreSQL and SQL Server.
+
+---
 
 ### 📌 Course 2 — Intermediate SQL
 > Folder: [`2_Intermidiate-SQL`](./2_Intermidiate-SQL)
